@@ -10,7 +10,6 @@ plugins {
 kmmbridge {
     mavenPublishArtifacts()
     githubReleaseVersions()
-    addGithubPackagesRepository()
     spm()
     versionPrefix.set("0.3")
 }
