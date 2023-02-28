@@ -1,6 +1,8 @@
 // swift-tools-version:5.3
 import PackageDescription
 
+let remoteKotlinUrl = "https://maven.pkg.github.com/Akramhussain4/kmm-test/Storelab_Demo/shared-kmmbridge/0.3.1/shared-kmmbridge-0.3.1.zip"
+let remoteKotlinChecksum = "40747a23bd2a3d8fe8934af3a82e617f7847015b8b09846b34250969bd0fa656"
 let packageName = "shared"
 
 let package = Package(
@@ -17,7 +19,8 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: packageName,
-            path: "./shared/build/XCFrameworks/debug/\(packageName).xcframework"
+            url: remoteKotlinUrl,
+            checksum: remoteKotlinChecksum
         )
         ,
     ]
