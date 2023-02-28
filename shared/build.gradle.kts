@@ -2,17 +2,18 @@ plugins {
     kotlin("multiplatform")
     id("com.android.library")
     kotlin("plugin.serialization") version "1.8.10"
-    id("com.squareup.sqldelight")
     id("co.touchlab.faktory.kmmbridge") version "0.3.5"
     `maven-publish`
 }
 
 kmmbridge {
     mavenPublishArtifacts()
+    addGithubPackagesRepository()
     githubReleaseVersions()
     spm()
     versionPrefix.set("0.3")
 }
+addGithubPackagesRepository()
 
 kotlin {
     android {
@@ -37,8 +38,6 @@ kotlin {
     }
     val coroutinesVersion = "1.6.4"
     val ktorVersion = "2.2.1"
-    val sqlDelightVersion = "1.5.4"
-    val dateTimeVersion = "0.4.0"
 
     sourceSets {
         val commonMain by getting {
@@ -47,7 +46,6 @@ kotlin {
                 implementation("io.ktor:ktor-client-core:$ktorVersion")
                 implementation("io.ktor:ktor-client-content-negotiation:$ktorVersion")
                 implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
-                implementation("com.squareup.sqldelight:runtime:$sqlDelightVersion")
             }
         }
         val commonTest by getting {
