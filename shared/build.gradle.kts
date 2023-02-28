@@ -6,14 +6,13 @@ plugins {
     `maven-publish`
 }
 
+addGithubPackagesRepository()
 kmmbridge {
     mavenPublishArtifacts()
-    addGithubPackagesRepository()
     githubReleaseVersions()
     spm()
     versionPrefix.set("0.3")
 }
-addGithubPackagesRepository()
 
 kotlin {
     android {
