@@ -9,9 +9,10 @@ plugins {
 
 kmmbridge {
     mavenPublishArtifacts()
-    noGitOperations()
+    githubReleaseVersions()
+    addGithubPackagesRepository()
     spm()
-    versionPrefix.set("0.8")
+    versionPrefix.set("0.1")
 }
 
 kotlin {
